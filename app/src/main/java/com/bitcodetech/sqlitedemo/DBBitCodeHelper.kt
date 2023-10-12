@@ -18,11 +18,14 @@ class DBBitCodeHelper(
         db?.execSQL(
             "create table students(_id integer primary key, name text not null, marks integer)"
         )
+        db?.execSQL(
+            "create table subjects(_id integer primary key, title text not null, rating integer)"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         Log.e("tag", "onUpgrade called...")
-        db?.execSQL("alter table students add column department text")
+        //db?.execSQL("alter table students add column department text")
     }
 
     override fun onDowngrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

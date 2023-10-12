@@ -15,7 +15,7 @@ class DbUtil(
             context,
             "db_bitcode",
             null,
-            2
+            1
         ).writableDatabase
 
     }
@@ -30,6 +30,24 @@ class DbUtil(
         } catch (e: java.lang.Exception) {
         }
     }*/
+
+    fun insertSubject(
+        id : Int,
+        title : String,
+        rating : Int
+    ) : Boolean {
+
+        val values = ContentValues()
+        values.put("_id", id)
+        values.put("title", title)
+        values.put("rating", rating)
+
+        //val rowNum = db.insert("students", "department, rating", values)
+        val rowNum = db.insert("subjects", null, values)
+
+
+        return rowNum >= 0;
+    }
 
     fun insertStudent(
         id : Int,

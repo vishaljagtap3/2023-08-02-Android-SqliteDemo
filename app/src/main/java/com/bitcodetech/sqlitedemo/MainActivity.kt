@@ -77,22 +77,26 @@ class MainActivity : AppCompatActivity() {
 
         val dbUtil = DbUtil(this)
 
-        /*var isInserted = dbUtil.insertStudent(109, "DD", 68)
+        var isInserted = dbUtil.insertStudent(109, "DD", 68)
         mt("$isInserted")
         isInserted = dbUtil.insertStudent(101, "AA", 65)
         mt("$isInserted")
         isInserted = dbUtil.insertStudent(208, "RR", 89)
-        mt("$isInserted")*/
+        mt("$isInserted")
+
+        dbUtil.insertSubject(90, "Android", 10)
+        dbUtil.insertSubject(91, "Java", 8)
+        dbUtil.insertSubject(92, "Kotlin", 9)
 
         //var students = dbUtil.getStudents()
-        var students = dbUtil.getStudentsWithRawQuery()
+        /*var students = dbUtil.getStudentsWithRawQuery()
         for(student in students) {
             mt(student.toString())
-        }
+        }*/
 
         mt("--------------------------------------")
 
-        val res = dbUtil.updateStudentMarks(208, 60)
+        /*val res = dbUtil.updateStudentMarks(208, 60)
         mt("update res: $res")
         students = dbUtil.getStudents()
         for(student in students) {
@@ -104,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         students = dbUtil.getStudents()
         for(student in students) {
             mt(student.toString())
-        }
+        }*/
 
         dbUtil.close()
     }

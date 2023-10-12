@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteDemo"
         tools:targetApi="31">
+
+        <provider
+            android:authorities="in.bitcode.EDUCATION"
+            android:name=".MyContentProvider"
+            android:exported="true"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
